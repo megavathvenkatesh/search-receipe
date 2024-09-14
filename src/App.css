@@ -1,38 +1,112 @@
-.App {
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* App container */
+.app-container {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Header and search section */
+.header-section {
+  background-image: url("https://img.freepik.com/premium-photo/several-types-dry-pasta-with-vegetables-herbs-top-view_134731-1022.jpg?size=626&ext=jpg");
+  background-size: cover;
+  padding: 80px 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-input {
+  width: 300px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  font-size: 16px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search-button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  border: none;
   color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.App-link {
-  color: #61dafb;
+.search-button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Gallery Section */
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 40px;
+  justify-items: center;
+}
+
+.gallery-item {
+  text-align: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto;
+  max-width: 250px;
+  border-radius: 5px;
+}
+
+.hotel-info {
+  margin-top: 10px;
+}
+
+.buy-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.buy-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 768px) {
+  .gallery-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 images per row on smaller screens */
   }
-  to {
-    transform: rotate(360deg);
+
+  .search-input {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: 1fr; /* 1 image per row on mobile */
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .gallery-image {
+    max-width: 100%;
   }
 }
